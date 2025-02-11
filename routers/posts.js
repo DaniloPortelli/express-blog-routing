@@ -7,9 +7,13 @@
 // e via dicendo…
 // Registrare il router dentro app.js con il prefisso posts/.
 
+//Richiamo le funzionalità di express
 const express = require("express");
+
+//Creo variabile che rappresenta l'istanza di un router, al fine di gestire separatamente le rotte in modo isolato 
 const router = express.Router();
 
+//Utilizzo diversi metodi per ogni azione che voglio far eseguire al server
 router.get("/", (req, res) => {
     const posts = [
         {
@@ -78,6 +82,7 @@ router.delete("/:id", (req, res) => {
     res.send("Cancellazione definitiva del post n." + req.params.id);
 });
 
+//Esporto tutto l'oggetto router
 module.exports = router;
 
 // Bonus
